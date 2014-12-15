@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User wish:</strong>
-  <%= @wish.user_wish %>
-</p>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<h3><%= @wish.user_wish %></h3>
 
 <%= link_to 'Edit', edit_wish_path(@wish) %> |
 <%= link_to 'Back', wishes_path %>
+</div>
+</div>

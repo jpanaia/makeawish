@@ -14,7 +14,7 @@
  *= require_self
  */
 
- 
+
 /*-------------------------
 	The clocks
 --------------------------*/
@@ -23,7 +23,7 @@
 #clock{
 	width:370px;
 	padding:40px;
-	margin:200px auto 60px;
+	margin:50px auto;
 	position:relative;
 }
 
@@ -55,13 +55,13 @@
 
 
 #clock.light{
-	background-color:#f3f3f3;
-	color:#272e38;
+/*	background-color:#f3f3f3;
+*/	color:#272e38;
 }
 
 #clock.light:after{
-	box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
+/*	box-shadow:0 4px 10px rgba(0,0,0,0.15);
+*/}
 
 #clock.light .digits div span{
 	background-color:#272e38;
@@ -78,8 +78,8 @@
 }
 
 #clock.light .display{
-	background-color:#dddddd;
-	box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;
+	/*background-color:#dddddd;
+	box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;*/
 }
 
 
@@ -331,6 +331,7 @@
 	top:10px;
 	left:0;
 	text-align:center;
+	display:none;
 }
 
 
@@ -351,8 +352,8 @@
 
 #clock .ampm{
 	position:absolute;
-	bottom:20px;
-	right:20px;
+	bottom:5px;
+	right:0;
 	font-size:12px;
 }
 
