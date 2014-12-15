@@ -23,7 +23,8 @@
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="/">Home</a></li>
             <li role="presentation"><a href="/activities">Activities</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
+<!--             <li role="presentation"><a href="#">Contact</a></li>
+ -->        <li role="presentation"><%= link_to 'Make A Wish!', new_wish_path %></li> 
           </ul>
         </nav>
         <%= image_tag 'genie.png', width: '5%', class: 'pull-left' %><h3 style="padding:10px 0 0 70px;">Make a Wish, Y'all</h3>
@@ -33,6 +34,19 @@
 <div class="container">
 <%= yield %>
 </div>
+
+<footer style="border-top:1px solid #ccc;margin-top:100px;padding:20px 0;">
+
+<% if user_signed_in? %>
+  You are logged in as <%= current_user.email %> | 
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<% else %>
+	You are not logged in.
+	<%= link_to "Log in", user_session_path %>
+<% end %>
+
+</footer>
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
 
 </body>

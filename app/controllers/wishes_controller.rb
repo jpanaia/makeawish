@@ -1,6 +1,5 @@
 class WishesController < ApplicationController
   before_action :set_wish, only: [:show, :edit, :update, :destroy]
-
   # GET /wishes
   # GET /wishes.json
   def index

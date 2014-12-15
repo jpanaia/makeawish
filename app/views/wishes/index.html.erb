@@ -9,14 +9,17 @@
     <% @wishes.each do |wish| %>
       <tr>
         <td><%= wish.user_wish %></td>
+        <% if can? :update, wish %>
         <td><%= link_to 'Show', wish %></td>
         <td><%= link_to 'Edit', edit_wish_path(wish) %></td>
         <td><%= link_to 'Destroy', wish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if can? :update, @wishes %>
 <%= link_to 'New Wish', new_wish_path %>
+<% end %>
