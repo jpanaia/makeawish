@@ -24,13 +24,24 @@
 			<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
 		  <% end %>
 		<% end %>
-		
 	</div>
 
+<br clear="all"/>
+
+<h1><%= @add %></h1>
+	<p><% @wish_times.each do |time| %>
+		 <strong>Time:</strong> <%= time.to_s(:time) %> <br/>
+		  <% @duration = time - Time.now %>
+		  <strong>Duration:</strong> <%= (@duration / 60).to_i %> minutes
+		  <hr/>
+		<% end %>
+	</p>
+
 	<div class="col-md-6">
-		<h2>You have <%= @duration %> minutes until genie will grant you a wish</h2>
+		<h2>You have <%= @next_time %> minutes until genie will grant you a wish</h2>
 		<p>In the meantime you could do the following things:</p>
 		<% @activities.each do |activity| %>
+
 			<p>You could <strong style="text-transform:uppercase"><%= activity.task %></strong> <%=  @duration / activity.ittake.min %> times</p>
 		<% end %>
 	</div>

@@ -19,6 +19,8 @@
   </tbody>
 </table>
 
+<h1>Time: <%= @time %></h1>
+
 <br>
 <% if can? :update, @wishes %>
 <%= link_to 'New Wish', new_wish_path %>
