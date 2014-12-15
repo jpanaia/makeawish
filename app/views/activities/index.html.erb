@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Activities</h1>
+
+
+<h2>Time Left Until Your Wish Comes True: <%= @duration %> minutes</h2>
+<h4> You could do the following things in that time </h4>
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Avg Time</th>
+      <th>Number of Times</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.task %></td>
+        <td><%= activity.ittake.min %> minutes</td>
+        <td><center><%=  @duration / activity.ittake.min %></center></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>

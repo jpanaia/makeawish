@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :activities
+
   root 'main#index'
 
   resources :wishes
