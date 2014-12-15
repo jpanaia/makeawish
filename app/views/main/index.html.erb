@@ -9,4 +9,8 @@
     </div>
 </div>
 
-<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
+<% @wish_times.each do |time| %>
+ <% if @current_time == time %>
+	<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
+  <% end %>
+<% end %>
