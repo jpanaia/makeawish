@@ -28,11 +28,11 @@
 
 <br clear="all"/>
 
-		<p>It is <%=@closest_duration %> minutes until your next wish at: <%=@closest_wish_time.strftime('%H:%M') %></p>
+		
 
 
 	<div class="col-md-6">
-		<h2>You have <%= @next_time %> minutes until genie will grant you a wish</h2>
+		<h2>You have <%= @closest_duration %> minutes until genie will grant you a wish</h2>
 		<p>In the meantime you could do the following things:</p>
 		<% @activities.each do |activity| %>
 
