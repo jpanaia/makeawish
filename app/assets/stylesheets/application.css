@@ -22,8 +22,8 @@
 
 #clock{
 	width:370px;
-	padding:40px;
-	margin:50px auto;
+	padding:20px;
+	margin:10px auto;
 	position:relative;
 }
 
@@ -42,8 +42,8 @@
 
 #clock .display{
 	text-align:center;
-	padding: 40px 20px 20px;
-	border-radius:6px;
+/*	padding: 40px 20px 20px;
+*/	border-radius:6px;
 	position:relative;
 	height: 54px;
 }

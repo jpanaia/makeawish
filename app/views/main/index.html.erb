@@ -9,34 +9,50 @@
 </script>
 
 <br clear="all">
+
+<!-- Add right column wish stream -->
+
 <div class="row">
-	<div class="col-md-6">
-		<div id="clock" class="light">
-		    <div class="display">
-		        <div class="weekdays"></div>
-		        <div class="ampm"></div>
-		        <div class="alarm"></div>
-		        <div class="digits"></div>
-		    </div>
-		</div>
-		<% @wish_times.each do |time| %>
-		 <% if @current_time.to_s(:time) == time.to_s(:time) %>
-			<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
-		  <% end %>
-		<% end %>
-	</div>
+  <div class="col-md-4">
+  	<div id="clock" class="light">
+	    <div class="display">
+	        <div class="weekdays"></div>
+	        <div class="ampm"></div>
+	        <div class="alarm"></div>
+	        <div class="digits"></div>
+	    </div>
+    </div>
 
-<br clear="all"/>
-
-		
+	<% @wish_times.each do |time| %>
+	 <% if @current_time.to_s(:time) == time.to_s(:time) %>
+		<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
+	  <% end %>
+	<% end %>
 
 
-	<div class="col-md-6">
-		<h2>You have <%= @closest_duration %> minutes until genie will grant you a wish</h2>
-		<p>In the meantime you could do the following things:</p>
+  </div>
+  <div class="col-md-8">
+	<p>Genie grants wishes when the hour and minute fields match. Craft beer bespoke kale chips, listicle drinking vinegar church-key whatever bitters chambray polaroid. Selfies hoodie iPhone lomo yr pork belly fingerstache, letterpress tattooed mumblecore stumptown. Taxidermy shabby chic fap, street art pork belly flexitarian small batch yr drinking vinegar cred before they sold out messenger bag master cleanse.</p>
+	<p> Chillwave distillery direct trade Blue Bottle jean shorts. Ugh art party tousled, stumptown meditation disrupt kale chips you probably haven't heard of them hoodie irony. Keytar single-origin coffee tousled, health goth Brooklyn Pinterest Marfa. Cronut cornhole bicycle rights 3 wolf moon.</p>
+  </div>
+ </div>
+
+<div class="row">
+	<div class="col-md-12">
+		<% if @closest_duration > 0 %>
+	     <h2 class="alert alert-info" align="center"><%= @closest_duration %> minutes until Genie grants your wish!</h2>
+	     <% else %>
+	     <h2 class="alert alert-danger" align="center">OMG Go wish!!</h2>
+	   <% end %>
+
+		<p><strong>Stick around and wait for the wish button to appear. Until then you could:</strong></p>
 		<% @activities.each do |activity| %>
-
-			<p>You could <strong style="text-transform:uppercase"><%= activity.task %></strong> <%=  @closest_duration / activity.ittake.min %> times</p>
+		  <div class="col-md-4">
+			<div class="well" align="center">
+				<h4 style="text-transform:uppercase"><%= activity.task %></h4>
+				<h1><%=  @closest_duration / activity.ittake.min %></h1> times
+		   </div>
+		</div>
 		<% end %>
 	</div>
 </div>

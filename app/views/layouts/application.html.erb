@@ -27,7 +27,7 @@
  -->        <li role="presentation"><%= link_to 'Make A Wish!', new_wish_path %></li> 
           </ul>
         </nav>
-        <%= image_tag 'genie.png', width: '5%', class: 'pull-left' %><h3 style="padding:10px 0 0 70px;">Make a Wish, Y'all</h3>
+        <%= image_tag 'genie.png', width: '5%', class: 'pull-left' %><h3 style="padding:10px 0 0 70px;">Time Genie<sup>&#8482;</sup> </h3>
       </div>
 
 
@@ -36,14 +36,20 @@
 </div>
 
 <footer style="border-top:1px solid #ccc;margin-top:100px;padding:20px 0;">
-
-<% if user_signed_in? %>
-  You are logged in as <%= current_user.email %> | 
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<% else %>
-	You are not logged in.
-	<%= link_to "Log in", user_session_path %>
-<% end %>
+<div class="row">
+  <div class="col-md-9">
+    <% if user_signed_in? %>
+      You are logged in as <%= current_user.email %> | 
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+    	You are not logged in.
+    	<%= link_to "Log in", user_session_path %>
+    <% end %>
+  </div>
+  <div class="col-md-3">
+    <p align="right">&copy; 2014 Rodia Productions</p>
+  </div>
+</div>
 
 </footer>
 
