@@ -20,7 +20,7 @@
 		    </div>
 		</div>
 		<% @wish_times.each do |time| %>
-		 <% if @current_time == time %>
+		 <% if @current_time.to_s(:time) == time.to_s(:time) %>
 			<p align="center"><%= link_to 'Make A Wish!', new_wish_path, class: 'btn btn-primary btn-lg' %></p>
 		  <% end %>
 		<% end %>

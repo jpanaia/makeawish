@@ -58,10 +58,10 @@ module MainHelper
      @closest_pair = @pos_durations.min
      @closest_wish_time = @closest_pair[1]
      @closest_duration = @closest_pair[0]
-	   puts "************"
-       print @closest_duration
-       print @closest_wish_time
-       puts "************"
+	   # puts "************"
+    #    print @closest_duration
+    #    print @closest_wish_time
+    #    puts "************"
   end # end of closest_wish_time
 
 end # end of helper
