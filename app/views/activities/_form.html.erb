@@ -19,6 +19,12 @@
     <%= f.label :ittake %><br>
     <%= f.time_select :ittake %>
   </div>
+  <div class="field form-group">
+    <%= f.label :photo %> <br>
+    <%= f.file_field :avatar %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

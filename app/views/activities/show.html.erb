@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<p><%= image_tag @activity.avatar.url(:thumb) %><br>
   <strong>Task:</strong>
   <%= @activity.task %>
 </p>
@@ -9,6 +10,8 @@
   <strong>Avg Time:</strong>
   <%= @activity.ittake.min %> minutes
 </p>
+
+
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>
