@@ -2,7 +2,7 @@ module MainHelper
 
   def wish_times 
 	@one_11 = Chronic.parse('1:11am')
-    @one_11p = Chronic.parse('1:05pm')
+    @one_11p = Chronic.parse('1:11pm')
 
     @two_22 = Chronic.parse('2:22am')
     @two_22p = Chronic.parse('2:22pm')
