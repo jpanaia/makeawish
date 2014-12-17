@@ -2,7 +2,7 @@ module MainHelper
 
   def wish_times 
 	@one_11 = Chronic.parse('1:11am')
-    @one_11p = Chronic.parse('1:11pm')
+    @one_11p = Chronic.parse('1:05pm')
 
     @two_22 = Chronic.parse('2:22am')
     @two_22p = Chronic.parse('2:22pm')
@@ -31,7 +31,7 @@ module MainHelper
 
   	@wish_times.each do |time| 
       @duration = time - Time.now
-	  @duration = (@duration / 60).to_i  #time in minutes
+	  @duration = (@duration / 60)  #time in minutes
 	  @durations.push([@duration,time])
 	   # puts "************"
     #    puts @duration
